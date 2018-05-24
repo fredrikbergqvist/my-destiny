@@ -3,6 +3,12 @@ import './App.css';
 
 import logo from './logo.svg';
 
+export const Test = () => {
+  return (<h4>
+    <span>Testar</span>
+  </h4>);
+}
+
 class App extends React.Component {
   public render() {
     return (
@@ -14,9 +20,11 @@ class App extends React.Component {
         <p className="App-intro">
           To get started, edit <code>src/App.tsx</code> and save to reload.
         </p>
+        <Test />
       </div>
     );
   }
 }
+
 
 export default App;
