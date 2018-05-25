@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './App.css';
 import logo from './logo.svg';
-import { Test } from './components/Test';
+import { Card } from './components/Card';
 
 
 export default class App extends React.Component {
@@ -15,7 +15,7 @@ export default class App extends React.Component {
         <p className="App-intro">
           To get started, edit <code>src/App.tsx</code> and save to reload.
         </p>
-        <Test />
+        <Card />
       </div>
     );
   }
