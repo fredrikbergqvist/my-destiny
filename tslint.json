@@ -1,9 +1,68 @@
 {
-  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
-  "linterOptions": {
-    "exclude": [
-      "config/**/*.js",
-      "node_modules/**/*.ts"
+  "rules": {
+    "ban": [true,
+      ["_", "extend"],
+      ["_", "isNull"],
+      ["_", "isDefined"]
+    ],
+    "class-name": true,
+    "comment-format": [true,
+      "check-space"
+    ],
+    "curly": true,
+    "eofline": true,
+    "forin": false,
+    "indent": [true, 2],
+    "interface-name": false,
+    "jsdoc-format": true,
+    "label-position": true,
+    "no-arg": true,
+    "no-bitwise": false,
+    "no-console": [false,
+      "debug",
+      "info",
+      "log",
+      "error",
+      "time",
+      "timeEnd",
+      "trace"
+    ],
+    "no-construct": true,
+    "no-debugger": true,
+    "no-empty": true,
+    "no-eval": true,
+    "no-string-literal": false,
+    "no-trailing-whitespace": true,
+    "no-duplicate-variable": true,
+    "no-unused-expression": true,
+    "one-line": [true,
+      "check-open-brace",
+      "check-catch",
+      "check-else",
+      "check-whitespace"
+    ],
+    "quotemark": [true, "single", "jsx-double"],
+    "radix": true,
+    "semicolon": [true,
+      "ignore-bound-class-methods"
+    ],
+    "triple-equals": [true, "allow-null-check"],
+    "typedef": [true,
+      "indexSignature",
+      "propertySignature"
+    ],
+    "typedef-whitespace": [true,
+      ["callSignature", "noSpace"],
+      ["catchClause", "noSpace"],
+      ["indexSignature", "space"]
+    ],
+    "variable-name": false,
+    "whitespace": [false,
+      "check-branch",
+      "check-decl",
+      "check-operator",
+      "check-separator",
+      "check-type"
     ]
   }
 }
