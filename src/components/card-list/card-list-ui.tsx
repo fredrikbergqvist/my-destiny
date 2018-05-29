@@ -1,4 +1,4 @@
-import {CardUi} from '../card/card-ui';
+import {CardDisplayType, CardUi} from '../card/card-ui';
 import * as React from 'react';
 import {IAppState} from '../../store/configure-store';
 import {connect, Dispatch} from 'react-redux';
@@ -34,6 +34,7 @@ class CardListUi extends React.Component<ICardListProps, ICardListState> {
 
   public render() {
     const cssClass = (this.props.type === CardListType.table ? 'card-list--table' : 'card-list--gallery') + ' card-list';
+    const cardType = this.props.type === CardListType.table ? CardDisplayType.list : CardDisplayType.gallery;
     return (
       <div className={cssClass}>
         <div className="card-list_displayType">
@@ -41,7 +42,8 @@ class CardListUi extends React.Component<ICardListProps, ICardListState> {
           <button onClick={this.changeListTypeToGallery}><span>Gallery</span></button>
         </div>
         <ul className="card-list_list">
-          {this.props.cards.map((c) => <li key={c.code} className="card-list_item"><CardUi card={c}/></li>)}
+          {this.props.cards.map((c) => <li key={c.code} className="card-list_item"><CardUi card={c} type={cardType}/>
+          </li>)}
         </ul>
       </div>);
   }
