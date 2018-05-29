@@ -1,8 +1,7 @@
 import * as React from 'react';
 import './App.css';
 import logo from './logo.svg';
-import {CardListUi} from './components/card-list/card-list-ui';
-import {getCardMockList} from './models/CardMock';
+import CardListUi from './components/card-list/card-list-ui';
 
 
 export default class App extends React.Component {
@@ -16,7 +15,7 @@ export default class App extends React.Component {
         <p className="App-intro">
           To get started, edit <code>src/App.tsx</code> and save to reload.
         </p>
-        <CardListUi cards={getCardMockList}/>
+        <CardListUi/>
       </div>
     );
   }

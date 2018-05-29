@@ -6,7 +6,7 @@ export interface IDataItemProps {
   data: any;
 }
 
-export const CardDataItem = onlyUpdateForKeys(['side'])(({title, data}: IDataItemProps) => {
+export const CardDataItem = onlyUpdateForKeys(['title', 'data'])(({title, data}: IDataItemProps) => {
   return !data ? null : (
     <li className="cardData_item">
       <span className="cardData_title">{title}</span>
