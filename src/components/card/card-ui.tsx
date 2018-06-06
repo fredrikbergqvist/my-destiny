@@ -3,6 +3,9 @@ import {ICard} from '../../models/Card';
 import {CardDataItem} from '../card-data-item/card-data-item';
 import {DieSidesUi} from '../die-sides/die-sides';
 import {onlyUpdateForKeys} from 'recompose';
+import './card-ui.css';
+import {cardInCollection, ICollectionDetails} from '../helpers/card-collection-helper';
+import {CollectionDetails} from './collection-details';
 
 export interface ICardProps {
   card: ICard;
@@ -16,6 +19,7 @@ export enum CardDisplayType {
 }
 
 export const CardUi = onlyUpdateForKeys(['card', 'type'])(({card, type = CardDisplayType.detail}: ICardProps) => {
+  const inCollection: ICollectionDetails = cardInCollection(card.code);
   const getCssClass = () => {
     let css = 'card';
     switch (type) {
@@ -29,10 +33,16 @@ export const CardUi = onlyUpdateForKeys(['card', 'type'])(({card, type = CardDis
         css += ' card--list';
         break;
     }
+    if (inCollection !== null) {
+      css += ' card--in-collection';
+    }
+
     return css;
   };
+  const collectionDetails = inCollection !== null ? (
+    <CollectionDetails dice={inCollection.dice} quantity={inCollection.quantity}/>) : null;
   const image = type === CardDisplayType.detail || type === CardDisplayType.gallery ?
-    (<img src={card.imagesrc} alt={card.name}/>) : null;
+    (<img src={card.imagesrc} alt={card.name} className="card__image"/>) : null;
   const dieSide = CardDisplayType.detail ?
     (<DieSidesUi sides={card.sides}/>) : null;
   const properties = type === CardDisplayType.gallery ? null : <ul className="cardDataList">
@@ -49,6 +59,7 @@ export const CardUi = onlyUpdateForKeys(['card', 'type'])(({card, type = CardDis
   return (
     <section className={getCssClass()}>
       {image}
+      {collectionDetails}
       {dieSide}
       {properties}
     </section>);

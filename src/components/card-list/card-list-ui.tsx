@@ -6,6 +6,7 @@ import * as cardListActions from './card-list-action-creators';
 import {ICardListState} from './card-list-reducer';
 import {bindActionCreators} from 'redux';
 import {ICard} from '../../models/Card';
+import './card-list-ui.css';
 
 
 export enum CardListType {
@@ -35,6 +36,7 @@ class CardListUi extends React.Component<ICardListProps, ICardListState> {
   public render() {
     const cssClass = (this.props.type === CardListType.table ? 'card-list--table' : 'card-list--gallery') + ' card-list';
     const cardType = this.props.type === CardListType.table ? CardDisplayType.list : CardDisplayType.gallery;
+    const cardsToShow = this.props.cards.slice(0, 9);
     return (
       <div className={cssClass}>
         <div className="card-list_displayType">
@@ -42,7 +44,7 @@ class CardListUi extends React.Component<ICardListProps, ICardListState> {
           <button onClick={this.changeListTypeToGallery}><span>Gallery</span></button>
         </div>
         <ul className="card-list_list">
-          {this.props.cards.map((c) => <li key={c.code} className="card-list_item"><CardUi card={c} type={cardType}/>
+          {cardsToShow.map((c) => <li key={c.code} className="card-list_item"><CardUi card={c} type={cardType}/>
           </li>)}
         </ul>
       </div>);
@@ -57,7 +59,6 @@ function mapDispatchToProps(dispatch: Dispatch) {
 }
 
 function mapStateToProps(state: IAppState) {
-  console.log(state);
   return state.cardList;
 }
 
