@@ -2,6 +2,7 @@ import * as React from 'react';
 import './App.css';
 import logo from './logo.svg';
 import CardListUi from './components/card-list/card-list-ui';
+import CardListFilterUi from './components/card-list-filter/card-list-filter-ui';
 
 
 export default class App extends React.Component {
@@ -13,8 +14,8 @@ export default class App extends React.Component {
           <h1 className="App-title">Welcome to your destiny</h1>
         </header>
         <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
         </p>
+        <CardListFilterUi/>
         <CardListUi/>
       </div>
     );

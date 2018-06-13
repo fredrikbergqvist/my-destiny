@@ -17,3 +17,15 @@ export const cardInCollection = (cardId: string): ICollectionDetails => {
   }
   return collectionDetails;
 };
+
+export const addCollectionData = (cards: any[]): ICard[] => {
+  return cards.map(c => {
+    const collectionCard = cardInCollection(c.code);
+    const inCollection = collectionCard !== null;
+    c.collection = {
+      inCollection,
+      ...collectionCard
+    };
+    return c;
+  });
+};

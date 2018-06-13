@@ -1,3 +1,9 @@
+export interface ICollectionData {
+  inCollection: boolean;
+  dice?: number;
+  quantity?: number;
+}
+
 export interface ICard {
   name: string;
   code: string;
@@ -31,4 +37,5 @@ export interface ICard {
   url: string;
   label: string;
   cp: number;
+  collection: ICollectionData;
 }

@@ -35,7 +35,8 @@ export const getCharacterCardMock = (code: string = '01001'): ICard => ({
   'url': 'http:\/\/swdestinydb.com\/card\/01001',
   'imagesrc': 'http:\/\/swdestinydb.com\/bundles\/cards\/en\/01\/01001.jpg',
   'label': 'Captain Phasma - Elite Trooper',
-  'cp': 1215
+  'cp': 1215,
+  collection: {inCollection: false}
 });
 
 export const getEventCardMock: ICard = {
@@ -67,7 +68,8 @@ export const getEventCardMock: ICard = {
   'url': 'http:\/\/swdestinydb.com\/card\/01116',
   'imagesrc': 'http:\/\/swdestinydb.com\/bundles\/cards\/en\/01\/01116.jpg',
   'label': 'Force Misdirection',
-  'cp': 100
+  'cp': 100,
+  collection: {inCollection: false}
 };
 
 export const getSupportCardMock: ICard = {
@@ -99,7 +101,8 @@ export const getSupportCardMock: ICard = {
   'url': 'http:\/\/swdestinydb.com\/card\/01123',
   'imagesrc': 'http:\/\/swdestinydb.com\/bundles\/cards\/en\/01\/01123.jpg',
   'label': 'Jedi Council',
-  'cp': 200
+  'cp': 200,
+  collection: {inCollection: false}
 };
 
 export const getUpgradeCardMock: ICard = {
@@ -139,7 +142,8 @@ export const getUpgradeCardMock: ICard = {
   'url': 'http:\/\/swdestinydb.com\/card\/02006',
   'imagesrc': 'http:\/\/swdestinydb.com\/bundles\/cards\/en\/02\/02006.jpg',
   'label': 'Imperial Discipline',
-  'cp': 100
+  'cp': 100,
+  collection: {inCollection: false}
 };
 
 export const getPlotCardMock: ICard = {
@@ -171,7 +175,8 @@ export const getPlotCardMock: ICard = {
   'url': 'http:\/\/swdestinydb.com\/card\/05168',
   'imagesrc': 'http:\/\/swdestinydb.com\/bundles\/cards\/en\/05\/05168.jpg',
   'label': 'Espionage',
-  'cp': 100
+  'cp': 100,
+  collection: {inCollection: false}
 };
 
 export const getCardMockList: ICard[] = [
