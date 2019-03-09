@@ -15,6 +15,7 @@ export const filterCards = (filter: ICardListFilterState, initialCardList: ICard
     if (filter.inCollection === true && cardInCollection(c.code) === null) {
       return false;
     }
+
     if (filter.searchQuery && searchQueryMatchesCard(filter.searchQuery, c) === false) {
       return false;
     }

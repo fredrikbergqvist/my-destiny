@@ -44,12 +44,12 @@ class CardListFilterUi extends React.Component<ICardListFilterProps, ICardListFi
             />
             <label htmlFor="inCollection">Only collected</label>
           </div>
-          <div className="card-list-filter__in-collection">
+          <div className="card-list-filter__not-in-collection">
             <input type="checkbox"
                    name="inCollection"
                    id="inCollection"
                    onClick={e => this.inCollectionClick()}
-                   checked={this.props.inCollection}
+                   checked={!this.props.inCollection}
             />
             <label htmlFor="inCollection">Only missing</label>
           </div>

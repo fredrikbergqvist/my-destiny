@@ -11,6 +11,7 @@ import {filterCards} from '../helpers/card-list-helper';
 export interface ICardListFilterState {
   searchQuery: string;
   inCollection: boolean;
+  notInCollection: boolean;
 }
 
 export interface ICardListState {
@@ -23,7 +24,8 @@ export interface ICardListState {
 
 const initialFilterState: ICardListFilterState = {
   searchQuery: '',
-  inCollection: false
+  inCollection: false,
+  notInCollection: false
 };
 const initialCardList = addCollectionData(allCards);
 const initialState: ICardListState = {
